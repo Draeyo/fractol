@@ -25,7 +25,7 @@ void	init(t_fract *fract)
 	FY2 = 0;
 	FY2_Z = 0;
 	I = 0;
-	FZOOM = ZOOM_V;
+	FZOOM_Z = 0;
 	I_MAX = ITER_MAX;
 	CHECK = 0;
 }

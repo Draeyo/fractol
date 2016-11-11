@@ -110,8 +110,8 @@ typedef struct	s_fract
 	double			tmp;
 	double			i;
 	double			*btab;
-	int				iteration_max;
-	int				zoom;
+	double				iteration_max;
+	double				zoom;
 	int				zoom_z;
 }				t_fract;
 

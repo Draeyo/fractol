@@ -13,10 +13,10 @@
 #include "fractol.h"
 
 /*
- ** bouton principal = 1
- ** molette bas = 4
- ** molette haut = 5
- ** bouton secondaire = 2
+ ** LEFT_CLICK = 1
+ ** SCROLL_DOWN = 4
+ ** SCROLL_UP = 5
+ ** RIGHT_CLICK = 2
  */
 
 int		ft_mouse(int button, int x, int y, t_fract *fract)

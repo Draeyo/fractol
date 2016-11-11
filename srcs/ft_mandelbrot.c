@@ -22,7 +22,7 @@ void	init_mandelbrot(t_fract *fract)
 		FY1 = -1.2 + FY1_Z;
 		FY2 = 1.2 + FY2_Z;
 	}
-	else
+	else if (CHECK == 42)
 	{
 		FX1 = FX1_Z - (WIN_X / FZOOM) / 2;
 		FX2 = FX2_Z - (WIN_X / FZOOM) / 2;
