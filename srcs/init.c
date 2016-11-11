@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calc.c                                          :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 12:55:25 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/11 16:15:38 by vlistrat         ###   ########.fr       */
+/*   Created: 2016/11/11 15:54:14 by vlistrat          #+#    #+#             */
+/*   Updated: 2016/11/11 16:20:54 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_calc(t_fract *fract, int fractale)
+void	init(t_fract *fract)
 {
-	if (FRACTALE == MANDELBROT)
-	{
-		init_mandelbrot(fract);
-		ft_mandelbrot(fract);
-	}
-	else if (FRACTALE == JULIA)
-	{
-		init_julia(fract);
-		ft_julia(fract);
-	}
+	FX = 0;
+	FX1 = 0;
+	FX1_Z = 0;
+	FX2 = 0;
+	FX2_Z = 0;
+	FY = 0;
+	FY1 = 0;
+	FY1_Z = 0;
+	FY2 = 0;
+	FY2_Z = 0;
+	I = 0;
+	FZOOM = ZOOM_V;
+	I_MAX = ITER_MAX;
+	CHECK = 0;
 }

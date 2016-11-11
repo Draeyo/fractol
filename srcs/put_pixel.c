@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 13:46:08 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/09 13:49:23 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/11 10:00:18 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	put_pixel(t_fract *fract)
 {
 	int		var;
 
-	var = (BPP / 8) + SL;
+	var = (FX * (BPP / 8)) + (SL * FY);
 	if (END == 0)
 	{
 		IMG[var] = COLOR;

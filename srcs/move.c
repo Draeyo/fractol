@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calc.c                                          :+:      :+:    :+:   */
+/*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 12:55:25 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/11 16:15:38 by vlistrat         ###   ########.fr       */
+/*   Created: 2016/11/11 16:13:30 by vlistrat          #+#    #+#             */
+/*   Updated: 2016/11/11 16:13:33 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_calc(t_fract *fract, int fractale)
+void	move(t_fract *fract, int keycode)
 {
-	if (FRACTALE == MANDELBROT)
-	{
-		init_mandelbrot(fract);
-		ft_mandelbrot(fract);
-	}
-	else if (FRACTALE == JULIA)
-	{
-		init_julia(fract);
-		ft_julia(fract);
-	}
+	FX = 0;
+	if (keycode == 123)
+		FX1_Z += 0.125 / (FZOOM / ZOOM_V);
+	else if (keycode == 124)
+		FX1_Z -= 0.125 / (FZOOM / ZOOM_V);
+	else if (keycode == 126)
+		FY1_Z += 0.125 / (FZOOM / ZOOM_V);
+	else if (keycode == 125)
+		FY1_Z -= 0.125 / (FZOOM / ZOOM_V);
 }

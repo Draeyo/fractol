@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 10:27:46 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/09 15:26:29 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/11 15:58:25 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ int		main(int ac, char **av)
 	if (!check_args(ac, av[1]))
 		ft_fractol_err(1);
 	fract.mlx = mlx_init();
-	fract.win_x = 1280;
-	fract.win_y = 720;
-	fract.win = mlx_new_window(fract.mlx, fract.win_x, fract.win_y, "fract_ol");
+	fract.win = mlx_new_window(fract.mlx, WIN_X, WIN_Y, "fract_ol");
 	if (!(fract.fractale = check_fract(av[1])))
 		ft_fractol_err(2);
+	init(&fract);
 	new_image(&fract);
 	mlx_key_hook(fract.win, ft_key, &fract);
 	mlx_expose_hook(fract.win, ft_expose, &fract);
