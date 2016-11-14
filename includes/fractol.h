@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 10:22:40 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/11 16:13:01 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/14 17:18:23 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@
 
 # define MANDELBROT 1
 # define JULIA 2
+# define BIRDY 3
+# define BUFFALO 4
+# define DRUID 5
+
 
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
@@ -61,6 +65,8 @@
 # define IMG_Y fract->image_y
 # define CR fract->cr
 # define CI fract->ci
+# define JCR fract->jcr
+# define JCI fract->jci
 # define ZR fract->zr
 # define ZI fract->zi
 # define FZOOM fract->zoom
@@ -69,6 +75,10 @@
 # define I_MAX fract->iteration_max
 # define I fract->i
 # define BTAB fract->btab
+# define XPOS fract->xpos
+# define YPOS fract->ypos
+# define JVAR fract->jvar
+# define CVAL fract->cval
 # define FRACTALE fract->fractale
 
 typedef struct	s_comp
@@ -91,28 +101,34 @@ typedef struct	s_fract
 	char		*img;
 	int			check;
 	/* coord */
-	double			x;
-	double			y;
-	double			x1;
-	double			x1_z;
-	double			x2;
-	double			x2_z;
-	double			y1;
-	double			y1_z;
-	double			y2;
-	double			y2_z;
-	double			image_x;
-	double			image_y;
-	double			cr;
-	double			ci;
-	double			zr;
-	double			zi;
-	double			tmp;
-	double			i;
-	double			*btab;
-	double				iteration_max;
-	double				zoom;
-	int				zoom_z;
+	double		x;
+	double		y;
+	double		x1;
+	double		x1_z;
+	double		x2;
+	double		x2_z;
+	double		y1;
+	double		y1_z;
+	double		y2;
+	double		y2_z;
+	double		image_x;
+	double		image_y;
+	double		cr;
+	double		ci;
+	double		jcr;
+	double		jci;
+	double		zr;
+	double		zi;
+	double		tmp;
+	int			i;
+	double		*btab;
+	double		iteration_max;
+	double		zoom;
+	double		xpos;
+	double		ypos;
+	double		zoom_z;
+	int			jvar;
+	int			cval;
 }				t_fract;
 
 /*
@@ -148,10 +164,21 @@ void			ft_mandelbrot(t_fract *fract);
 void			init_julia(t_fract *fract);
 void			ft_julia(t_fract *fract);
 
+void			init_birdy(t_fract *fract);
+void			ft_birdy(t_fract *fract);
+
+void			init_buffalo(t_fract *fract);
+void			ft_buffalo(t_fract *fract);
+
+void			init_druid(t_fract *fract);
+void			ft_druid(t_fract *fract);
 /*
 ** RECALC
 */
 void			move(t_fract *fract, int keycode);
+void			ft_color(int keycode, t_fract *fract);
+
+int				ft_hook_julia(int x, int y, t_fract *fract);
 
 /*
 **

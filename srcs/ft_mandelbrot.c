@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 15:29:33 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/11 16:16:27 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/14 16:19:17 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ void	init_mandelbrot(t_fract *fract)
 		FY1 = FY1_Z - (WIN_Y / FZOOM) / 2;
 		FY2 = FY2_Z - (WIN_Y / FZOOM) / 2;
 	}
-	FX = 0;
+	FX = -1;
 }
 
 void	ft_mandelbrot(t_fract *fract)
 {
-	while (FX < WIN_X)
+	while (++FX < WIN_X)
 	{
-		FY = 0;
-		while (FY < WIN_Y)
+		FY = -1;
+		while (++FY < WIN_Y)
 		{
 			CR = FX / FZOOM + FX1;
 			CI = FY / FZOOM + FY1;
@@ -50,11 +50,9 @@ void	ft_mandelbrot(t_fract *fract)
 				ZR = ZR * ZR - ZI * ZI + CR;
 				ZI = 2 * ZI * FTMP + CI;
 				++I;
-				((I == I_MAX) ? (COLOR = BLACK) : (COLOR = (I * 0xFF / I_MAX)));
+				((I == I_MAX) ? (COLOR = BLACK) : (COLOR = (I * CVAL / I_MAX)));
 				put_pixel(fract);
 			}
-			++FY;
 		}
-		++FX;
 	}
 }
