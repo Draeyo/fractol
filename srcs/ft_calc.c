@@ -33,4 +33,10 @@ void	ft_calc(t_fract *fract, int fractale)
 		ft_buffalo(fract);
 	else if (FRACTALE == DRUID)
 		ft_druid(fract);
+	else if (FRACTALE == CELTIC)
+		ft_celtic(fract);
+	else if (FRACTALE == CUBIC)
+		ft_cubic(fract);
+	else if (FRACTALE == BSHIP)
+		ft_burnship(fract);
 }

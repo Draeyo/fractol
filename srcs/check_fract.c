@@ -18,5 +18,17 @@ int		check_fract(char *av)
 		return (1);
 	else if (ft_strcmp(av, "Julia") == 0)
 		return (2);
+	else if (ft_strcmp(av, "Bird") == 0)
+		return (3);
+	else if (ft_strcmp(av, "Buffalo") == 0)
+		return (4);
+	else if (ft_strcmp(av, "Druid") == 0)
+		return (5);
+	else if (ft_strcmp(av, "Celtic") == 0)
+		return (6);
+	else if (ft_strcmp(av, "Cubic") == 0)
+		return (7);
+	else if (ft_strcmp(av, "Burnship") == 0)
+		return (8);
 	return (0);
 }

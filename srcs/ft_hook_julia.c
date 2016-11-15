@@ -21,16 +21,16 @@ int		ft_hook_julia(int x, int y, t_fract *fract)
 	yt = (double)y;
 	if (FRACTALE == JULIA)
 	{
-		if ((xt >= 0 && xt <= WIN_X) && (yt >= 0 && yt <= WIN_Y))
+		if ((xt >= 0 && xt <= WIN_X) && (yt >= 0 && yt <= WIN_Y) && JVAR)
 		{
 			if (xt < XPOS)
-				JCR -= 0.05;
+				JCR -= 0.1 / (FZOOM / ZOOM_V);
 			else if (xt > XPOS)
-				JCR += 0.05;
+				JCR += 0.1 / (FZOOM / ZOOM_V);
 			if (yt < YPOS)
-				JCI -= 0.05;
+				JCI -= 0.1 / (FZOOM / ZOOM_V);
 			else if (yt > YPOS)
-				JCI += 0.05;
+				JCI += 0.1 / (FZOOM / ZOOM_V);
 			XPOS = xt;
 			YPOS = yt;
 			new_image(fract);

@@ -23,7 +23,8 @@ INC_PATH = ./includes/
 SRCS_NAME = main.c check_args.c ft_fractol_err.c ft_calc.c ft_key.c ft_expose.c \
 			new_image.c ft_mouse.c put_pixel.c ft_exit.c check_fract.c \
 			ft_mandelbrot.c ft_julia.c move.c init.c ft_hook_julia.c \
-			ft_color.c ft_birdy.c ft_buffalo.c ft_druid.c
+			ft_color.c ft_birdy.c ft_buffalo.c ft_druid.c ft_celtic.c \
+			ft_cubic.c ft_burnship.c
 
 SRCS = $(addprefix $(SRCS_PATH),$(SRCS_NAME))
 

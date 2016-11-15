@@ -14,7 +14,6 @@
 
 void	move(t_fract *fract, int keycode)
 {
-	FX = 0;
 	if (keycode == 123)
 		FX1_Z -= 0.125 / (FZOOM / ZOOM_V);
 	else if (keycode == 124)

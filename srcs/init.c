@@ -34,4 +34,6 @@ void	init(t_fract *fract)
 	JCI = 0;
 	JVAR = 1;
 	CVAL = 0xFF;
+	ZOOM_V = 300.00;
+	MUSIC = 0;
 }

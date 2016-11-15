@@ -15,14 +15,14 @@
 void	init_mandelbrot(t_fract *fract)
 {
 	FZOOM = ZOOM_V + FZOOM_Z;
-	if (CHECK >= 0 && CHECK <= 4)
+	if (CHECK == 0)
 	{
 		FX1 = -2.6 + FX1_Z;
 		FX2 = 1.66 + FX2_Z;
 		FY1 = -1.2 + FY1_Z;
 		FY2 = 1.2 + FY2_Z;
 	}
-	else if (CHECK == 42)
+	else
 	{
 		FX1 = FX1_Z - (WIN_X / FZOOM) / 2;
 		FX2 = FX2_Z - (WIN_X / FZOOM) / 2;

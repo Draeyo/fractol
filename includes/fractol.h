@@ -21,7 +21,6 @@
 
 # define WIN_X 1280
 # define WIN_Y 720
-# define ZOOM_V 300
 # define ITER_MAX 35
 
 # define LEFT_CLICK 1
@@ -34,6 +33,9 @@
 # define BIRDY 3
 # define BUFFALO 4
 # define DRUID 5
+# define CELTIC 6
+# define CUBIC 7
+# define BSHIP 8
 
 
 # define WHITE 0xFFFFFF
@@ -70,6 +72,7 @@
 # define ZR fract->zr
 # define ZI fract->zi
 # define FZOOM fract->zoom
+# define ZOOM_V fract->zoom_v
 # define FZOOM_Z fract->zoom_z
 # define FTMP fract->tmp
 # define I_MAX fract->iteration_max
@@ -80,6 +83,7 @@
 # define JVAR fract->jvar
 # define CVAL fract->cval
 # define FRACTALE fract->fractale
+# define MUSIC fract->music
 
 typedef struct	s_comp
 {
@@ -100,6 +104,7 @@ typedef struct	s_fract
 	int			fractale;
 	char		*img;
 	int			check;
+	int			music;
 	/* coord */
 	double		x;
 	double		y;
@@ -124,6 +129,7 @@ typedef struct	s_fract
 	double		*btab;
 	double		iteration_max;
 	double		zoom;
+	double		zoom_v;
 	double		xpos;
 	double		ypos;
 	double		zoom_z;
@@ -172,6 +178,12 @@ void			ft_buffalo(t_fract *fract);
 
 void			init_druid(t_fract *fract);
 void			ft_druid(t_fract *fract);
+
+void			ft_celtic(t_fract *fract);
+
+void			ft_cubic(t_fract *fract);
+
+void			ft_burnship(t_fract *fract);
 /*
 ** RECALC
 */

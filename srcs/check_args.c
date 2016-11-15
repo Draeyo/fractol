@@ -14,16 +14,17 @@
 
 int		check_args(int ac, char *av)
 {
-	if (ac != 2)
+	if (ac != 2 || (av && !check_fract(av)))
 	{
-		ft_putstr_fd("Wring number of arguments.\nExpected 1, have ", 2);
-		ft_putnbr_fd((ac - 1), 2);
-		ft_putendl_fd(".", 2);
-		return (0);
-	}
-	else if (ft_strcmp(av, "Mandelbrot") != 0 && ft_strcmp(av, "Julia") != 0)
-	{
-		ft_putendl_fd("Valid fractales : Mandelbrot, Julia", 2);
+		if (ac != 2)
+		{
+			ft_putstr_fd("Wrong number of arguments. Expected 1, have ", 2);
+			ft_putnbr_fd((ac - 1), 2);
+			ft_putendl_fd(".", 2);
+		}
+		ft_putstr_fd("Valid fractales : ", 2);
+		ft_putstr_fd("Mandelbrot, Julia, Bird, Buffalo, Druid, ", 2);
+		ft_putendl_fd("Celtic, Cubic, Burnship", 2);
 		return (0);
 	}
 	return (1);

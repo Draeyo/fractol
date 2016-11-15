@@ -19,9 +19,32 @@
  ** RIGHT_CLICK = 2
  */
 
+static void	reset_pos(t_fract *fract)
+{
+	FX1_Z = 0;
+	FX2_Z = 0;
+	FY1_Z = 0;
+	FY2_Z = 0;
+	FZOOM_Z = 0;
+}
+
+static void	dezoom(t_fract *fract)
+{
+	if (I_MAX - 5 > ITER_MAX)
+		I_MAX -= 5;
+	if (FZOOM / ZOOM_V > 1.5)
+		FZOOM_Z /= 2;
+	else
+	{
+		CHECK = 0;
+		reset_pos(fract);
+	}
+}
+
 int		ft_mouse(int button, int x, int y, t_fract *fract)
 {
 	if (button == 1 || button == 2 || button == 4 || button == 5)
+	{
 		if (x >= 0 && x <= WIN_X && y >= 0 && y <= WIN_Y)
 		{
 			CHECK = 42;
@@ -35,12 +58,9 @@ int		ft_mouse(int button, int x, int y, t_fract *fract)
 				I_MAX += 5;
 			}
 			else if (button == RIGHT_CLICK || button == SCROLL_DOWN)
-			{
-				if (I_MAX - 5 > ITER_MAX)
-					I_MAX -= 5;
-				FZOOM_Z /= 2;
-			}
+				dezoom(fract);
 			new_image(fract);
 		}
+	}
 	return (0);
 }
