@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_celtic.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/16 10:59:13 by vlistrat          #+#    #+#             */
+/*   Updated: 2016/11/16 10:59:35 by vlistrat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 static void	init_celtic(t_fract *fract)
@@ -39,7 +51,7 @@ void		ft_celtic(t_fract *fract)
 				ZR = fabs((ZR * ZR) - (ZI * ZI)) + CR;
 				ZI = -(2 * ZI * FTMP + CI);
 				++I;
-				((I == I_MAX) ? (COLOR = BLACK) : (COLOR = (I * CVAL / I_MAX)));
+				COLOR = ((I == I_MAX) ? BLACK : (I * CVAL / I_MAX));
 				put_pixel(fract);
 			}
 		}

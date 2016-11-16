@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 13:35:01 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/14 15:04:28 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/16 10:35:03 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int		ft_hook_julia(int x, int y, t_fract *fract)
 		if ((xt >= 0 && xt <= WIN_X) && (yt >= 0 && yt <= WIN_Y) && JVAR)
 		{
 			if (xt < XPOS)
-				JCR -= 0.1 / (FZOOM / ZOOM_V);
+				JCR -= 0.05 / (FZOOM / ZOOM_V);
 			else if (xt > XPOS)
-				JCR += 0.1 / (FZOOM / ZOOM_V);
+				JCR += 0.05 / (FZOOM / ZOOM_V);
 			if (yt < YPOS)
-				JCI -= 0.1 / (FZOOM / ZOOM_V);
+				JCI -= 0.05 / (FZOOM / ZOOM_V);
 			else if (yt > YPOS)
-				JCI += 0.1 / (FZOOM / ZOOM_V);
+				JCI += 0.05 / (FZOOM / ZOOM_V);
 			XPOS = xt;
 			YPOS = yt;
 			new_image(fract);

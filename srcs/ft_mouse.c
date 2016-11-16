@@ -6,20 +6,13 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 13:34:17 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/11 16:15:58 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/16 11:02:21 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-/*
- ** LEFT_CLICK = 1
- ** SCROLL_DOWN = 4
- ** SCROLL_UP = 5
- ** RIGHT_CLICK = 2
- */
-
-static void	reset_pos(t_fract *fract)
+static void		reset_pos(t_fract *fract)
 {
 	FX1_Z = 0;
 	FX2_Z = 0;
@@ -28,7 +21,7 @@ static void	reset_pos(t_fract *fract)
 	FZOOM_Z = 0;
 }
 
-static void	dezoom(t_fract *fract)
+static void		dezoom(t_fract *fract)
 {
 	if (I_MAX - 5 > ITER_MAX)
 		I_MAX -= 5;
@@ -41,7 +34,7 @@ static void	dezoom(t_fract *fract)
 	}
 }
 
-int		ft_mouse(int button, int x, int y, t_fract *fract)
+int				ft_mouse(int button, int x, int y, t_fract *fract)
 {
 	if (button == 1 || button == 2 || button == 4 || button == 5)
 	{

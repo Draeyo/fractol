@@ -6,20 +6,13 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 12:57:33 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/14 17:16:04 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/16 11:04:06 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-/*
- ** KEYCODES
- ** 38 = J  -- 46 == M -- 11 = B -- 32 = U -- 2 = D -- 8 = C -- 4 = H -- 9 = V
- **
- **
- */
-
-static int	change_key(int k)
+static int		change_key(int k)
 {
 	if (k == 0 || k == 1 || k == 2 || k == 3 || k == 5)
 		return (1);
@@ -28,7 +21,7 @@ static int	change_key(int k)
 	return (0);
 }
 
-static void	change_fract(int keycode, t_fract *fract)
+static void		change_fract(int keycode, t_fract *fract)
 {
 	CHECK = 0;
 	if (keycode == 1)
@@ -51,7 +44,7 @@ static void	change_fract(int keycode, t_fract *fract)
 	new_image(fract);
 }
 
-static void	ft_music(int keycode, t_fract *fract)
+static void		ft_music(int keycode, t_fract *fract)
 {
 	if (!MUSIC)
 	{
@@ -65,7 +58,7 @@ static void	ft_music(int keycode, t_fract *fract)
 	}
 }
 
-static int	number_key(int k)
+static int		number_key(int k)
 {
 	if (k == 18 || k == 19 || k == 20 || k == 21)
 		return (1);
@@ -76,11 +69,11 @@ static int	number_key(int k)
 	return (0);
 }
 
-int		ft_key(int keycode, t_fract *fract)
+int				ft_key(int keycode, t_fract *fract)
 {
 	if (keycode == 53)
 		ft_exit(fract);
-	else if (change_key(keycode)) 
+	else if (change_key(keycode))
 		change_fract(keycode, fract);
 	else if (keycode >= 123 && keycode <= 126)
 		move(fract, keycode);
@@ -95,7 +88,5 @@ int		ft_key(int keycode, t_fract *fract)
 	}
 	else if (keycode == 46)
 		ft_music(keycode, fract);
-	else
-		ft_printf("%d\n", keycode);
 	return (0);
 }

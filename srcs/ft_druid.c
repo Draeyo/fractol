@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 17:09:56 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/14 17:17:25 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/16 11:00:32 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_druid(t_fract *fract)
 					ZR = fabs((ZR * ZR) - (ZI * ZI)) + CR;
 				ZI = -(2 * ZI * FTMP) + CI;
 				++I;
-				((I == I_MAX) ? (COLOR = BLACK) : (COLOR = (I * CVAL / I_MAX)));
+				COLOR = ((I == I_MAX) ? BLACK : (I * CVAL / I_MAX));
 				put_pixel(fract);
 			}
 		}

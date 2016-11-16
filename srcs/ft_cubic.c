@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_cubic.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/16 10:59:43 by vlistrat          #+#    #+#             */
+/*   Updated: 2016/11/16 11:00:02 by vlistrat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 static void	init_cubic(t_fract *fract)
@@ -39,7 +51,7 @@ void		ft_cubic(t_fract *fract)
 				ZR = (ZR * ZR) - (ZI * ZI) + CR;
 				ZI = -2 * (ZI * FTMP) + CI;
 				++I;
-				((I == I_MAX) ? (COLOR = BLACK) : (COLOR = (I * CVAL / I_MAX)));
+				COLOR = ((I == I_MAX) ? BLACK : (I * CVAL / I_MAX));
 				put_pixel(fract);
 			}
 		}

@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 16:57:13 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/14 17:07:13 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/16 10:55:46 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,9 @@ void	ft_buffalo(t_fract *fract)
 				ZR = fabs((ZR * ZR) - (ZI * ZI)) + CR;
 				ZI = 2 * fabs((ZI * FTMP)) + CI;
 				++I;
-				((I == I_MAX) ? (COLOR = BLACK) : (COLOR = (I * CVAL / I_MAX)));
+				COLOR = ((I == I_MAX) ? BLACK : (I * CVAL / I_MAX));
 				put_pixel(fract);
 			}
 		}
 	}
 }
-

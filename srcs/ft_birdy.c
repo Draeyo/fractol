@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 16:45:10 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/14 17:01:28 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/16 10:58:27 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,9 @@ void	ft_birdy(t_fract *fract)
 				ZI = (ZR * ZR * 3 - (ZI * ZI)) * fabs(ZI) + CI;
 				ZR = ((ZR * ZR) - (FTMP * FTMP * 3)) * fabs(ZR) + CR;
 				++I;
-				((I == I_MAX) ? (COLOR = BLACK) : (COLOR = (I * CVAL / I_MAX)));
+				COLOR = ((I == I_MAX) ? BLACK : (I * CVAL / I_MAX));
 				put_pixel(fract);
 			}
 		}
 	}
 }
-

@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 10:22:40 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/14 17:18:23 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/16 11:05:02 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@
 # define CELTIC 6
 # define CUBIC 7
 # define BSHIP 8
-
 
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
@@ -93,7 +92,6 @@ typedef struct	s_comp
 
 typedef struct	s_fract
 {
-	/* base */
 	void		*mlx;
 	void		*win;
 	void		*img_p;
@@ -105,7 +103,6 @@ typedef struct	s_fract
 	char		*img;
 	int			check;
 	int			music;
-	/* coord */
 	double		x;
 	double		y;
 	double		x1;
@@ -191,9 +188,5 @@ void			move(t_fract *fract, int keycode);
 void			ft_color(int keycode, t_fract *fract);
 
 int				ft_hook_julia(int x, int y, t_fract *fract);
-
-/*
-**
-*/
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vlistrat <vlistrat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 10:27:46 by vlistrat          #+#    #+#             */
-/*   Updated: 2016/11/14 14:16:02 by vlistrat         ###   ########.fr       */
+/*   Updated: 2016/11/16 11:02:42 by vlistrat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		main(int ac, char **av)
 	mlx_key_hook(fract.win, ft_key, &fract);
 	mlx_expose_hook(fract.win, ft_expose, &fract);
 	mlx_mouse_hook(fract.win, ft_mouse, &fract);
-	mlx_hook(fract.win, 17, (1L << 17), ft_exit, &fract); 
+	mlx_hook(fract.win, 17, (1L << 17), ft_exit, &fract);
 	mlx_hook(fract.win, 6, (1L << 6), ft_hook_julia, &fract);
 	mlx_loop(fract.mlx);
 	return (0);
