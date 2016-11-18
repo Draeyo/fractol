@@ -50,12 +50,12 @@ $(NAME): $(OBJ)
 
 clean:
 	@(/bin/rm -f $(OBJ))
-	@(echo "\x1b[1;34m$(NAME)\x1b[0m \x1b[31mcreated.\x1b[0m \x1b[1;32m✓\x1b[0m")
+	@(echo "\x1b[1;34m$(NAME)\x1b[0m object files \x1b[31mdeleted.\x1b[0m \x1b[1;32m✓\x1b[0m")
 	@(make -C $(LIBFT_PATH) clean)
 
 fclean: clean
 	@(/bin/rm -f $(NAME))
-	@(echo "\x1b[1;34m$(NAME)\x1b[0m \x1b[31mcreated.\x1b[0m \x1b[1;32m✓\x1b[0m")
+	@(echo "\x1b[1;34m$(NAME)\x1b[0m \x1b[31mdeleted.\x1b[0m \x1b[1;32m✓\x1b[0m")
 	@(make -C $(LIBFT_PATH) fclean)
 
 re: fclean all
